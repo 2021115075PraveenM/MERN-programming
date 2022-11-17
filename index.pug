@@ -1,0 +1,39 @@
+
+html 
+    head 
+        title Pug_Execution 
+        style 
+            include pug.css
+    body 
+        -var demo='let"s Goooo!!!!!!';
+        h1.h1class(style=({
+            border:'aqua 20px  solid'
+             })) #{demo}
+        form(action="/display" method='get')
+            fieldset 
+                legend pug-execute
+                span Name:
+                 input(type='name' name='name' id='nam')
+                br 
+                br
+                span Number: 
+                 input(type="number" name='number' id='num')
+                br
+                br
+                button(type='submit' style={
+                    color:'green',
+                    border: '5px solid brown'
+                }) Click 
+        ul.class1 
+            each i in [1,2,3]
+                li=i 
+        div#id1 
+            h1 hello #{name} 
+        div 
+            if(wonder)
+                h1=wonder.ok
+            
+            else
+                h1=wonder.notok
+            
+            
